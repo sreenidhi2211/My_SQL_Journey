@@ -9,7 +9,9 @@
 -- | DROP     | Delete table/database             |
 -- | TRUNCATE | Remove all data (structure stays) |
 -- | RENAME   | Rename table                      |
-
+ 
+ -- THIS COMMAND IS USED TO REMOVE THE DATABASE THAT EXISTS WITH THE SAME NAME
+ DROP DATABASE IF EXISTS db_school ;
 -- CREATE: used to create the database or the table
 
 -- 1.  CREATING A DATABASE :
@@ -26,10 +28,10 @@ USE db_school ;
 
 -- 2. CREATE A TABLE
 -- SYNTAX:
--- --	CREATE TABLE database.table_name
--- 			(column_name1 data_type,
--- 			column_name2 data_type
--- )
+-- CREATE TABLE database.table_name(
+-- column_name1 data_type,
+-- 	column_name2 data_type
+-- );
 
 CREATE TABLE db_school.Subjects (
 	subject_id INT NOT NULL,
@@ -76,18 +78,8 @@ CREATE TABLE db_school.Enrollments(
     FOREIGN KEY(subject_id) REFERENCES Subjects(subject_id)
     );
     
--- ALTER: to modify the structure of the data base
--- involves adding,removing,modify columns in the table
 
--- SYNTAX:
---	ALTER TABLE table_name
--- ADD column_name data_type -- this is to add column
--- DROP COLUMN column_name data_type -- to delete column  
--- MODIFY COLUMN column_name new_datatype -- if new size specify it aso -- to modify the column
--- RENAME COLUMN old_col_name TO new_col_name -- to rename the column
 
-ALTER TABLE Subjects
-MODIFY COLUMN subject_id INT auto_increment;
 
 
 
