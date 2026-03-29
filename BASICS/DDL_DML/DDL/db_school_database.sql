@@ -2,6 +2,7 @@
 -- as the name says- it defines the data and structure of the database
 -- it create,alters the database,tables and columns
 -- here is the short notes on the commands
+-- |----------------------------------------------|
 -- | Command  | Purpose                           |
 -- | -------- | --------------------------------- |
 -- | CREATE   | Create database/table             |
@@ -34,14 +35,14 @@ USE db_school ;
 -- );
 
 CREATE TABLE db_school.Subjects (
-	subject_id INT NOT NULL,
+	subject_id INT NOT NULL AUTO_INCREMENT,
     subject_name VARCHAR(50) NOT NULL,
     total_marks INT,
     PRIMARY KEY(subject_id)
     );
 
 CREATE TABLE db_school.Teachers (
-	teacher_id INT NOT NULL,
+	teacher_id INT NOT NULL AUTO_INCREMENT,
     teacher_name VARCHAR(50) NOT NULL,
     subject_id INT,
     PRIMARY KEY(teacher_id),
